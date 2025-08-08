@@ -1,12 +1,12 @@
-import Component from "./components/Component";
-import HomePage from "./pages/HomePage";
 import Router from "./router";
 
-class App extends Component {
-  mount() {
-    const contents = document.querySelector("main");
-    const router = new Router(contents);
+class App {
+  constructor($target) {
+    $target.innerHTML = this.template();
+    const main = document.getElementById("main");
+    new Router(main);
   }
+  mount() {}
 
   template() {
     return `<div>
@@ -14,14 +14,14 @@ class App extends Component {
         <h1>logo</h1>
         <ul>
          <li>
-            <a href="#/">Home</a>
+            <a data-path="/" href="#/">Home</a>
          </li>
          <li>
-            <a href="#/">Todo</a>
+            <a data-path="/todo" href="#/todo">Todo</a>
          </li>
         </ul>
       </header>
-      <main></main>
+      <main id="main"></main>
     </div>`;
   }
 }
