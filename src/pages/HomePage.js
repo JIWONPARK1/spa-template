@@ -1,8 +1,11 @@
 import Component from "../components/Component";
+import { html } from "../utils/html";
 
 class HomePage extends Component {
   template() {
-    return `<div>HomePage</div>`;
+    return html`<div>
+      <div></div>
+    </div>`;
   }
 }
 

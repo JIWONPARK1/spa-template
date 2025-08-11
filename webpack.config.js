@@ -23,6 +23,7 @@ module.exports = (env, argv) => {
       },
       port: 3000,
       liveReload: true,
+      historyApiFallback: true,
     },
     module: {
       rules: [

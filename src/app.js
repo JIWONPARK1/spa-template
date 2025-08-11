@@ -1,27 +1,28 @@
+import Component from "./components/Component";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header";
 import Router from "./router";
 
-class App {
-  constructor($target) {
-    $target.innerHTML = this.template();
+class App extends Component {
+  mount() {
+    const header = document.querySelector("header");
     const main = document.getElementById("main");
+    const footer = document.querySelector("footer");
+
+    new Header(header);
     new Router(main);
+    new Footer(footer);
   }
-  mount() {}
 
   template() {
-    return `<div>
+    return `
+    <div>
       <header>
-        <h1>logo</h1>
-        <ul>
-         <li>
-            <a data-path="/" href="#/">Home</a>
-         </li>
-         <li>
-            <a data-path="/todo" href="#/todo">Todo</a>
-         </li>
-        </ul>
       </header>
-      <main id="main"></main>
+      <main id="main">
+      </main>
+      <footer>
+      </footer>
     </div>`;
   }
 }
